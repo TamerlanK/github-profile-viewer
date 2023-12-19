@@ -1,4 +1,4 @@
-import { UseQueryOptions, useQuery } from "@tanstack/react-query"
+import { useQuery } from "@tanstack/react-query"
 import { UserProfile } from "../lib/types"
 import { userProfileQueryKey } from "../lib/queryKeys"
 import axios from "axios"
@@ -10,13 +10,9 @@ export const fetchUserProfile = async (
   return response.data
 }
 
-export const useUserProfile = (
-  username: string,
-  options?: UseQueryOptions<UserProfile, Error>
-) => {
+export const useUserProfile = (username: string) => {
   return useQuery<UserProfile, Error>({
     queryKey: userProfileQueryKey(username),
     queryFn: () => fetchUserProfile(username),
-    ...options,
   })
 }

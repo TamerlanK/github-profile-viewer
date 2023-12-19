@@ -1,9 +1,14 @@
+// Loader.tsx
+
+import React from "react";
+
 const Loader: React.FC = () => {
   return (
-    <div className="flex items-center justify-center h-screen">
-      <div className="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 h-12 w-12"></div>
+    <div className="flex flex-col items-center justify-center h-screen">
+      <div className="border-t-[3px] border border-t-slate-900 border-slate-400 rounded-full w-12 h-12 animate-spin mb-4"></div>
+      <p className="text-gray-300 text-lg font-semibold">Loading user details...</p>
     </div>
-  )
-}
+  );
+};
 
-export default Loader
+export default Loader;
